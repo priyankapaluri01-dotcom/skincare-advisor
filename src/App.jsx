@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Login from "./components/Login";
+import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import CreateAccount from './components/createaccount';
+import CreateAccount from './pages/createaccount';
 import Routine from './components/routine';
-import AboutUs from "./components/aboutus";
-import ContactUs from "./components/contactus";
+import AboutUs from "./pages/aboutus";
+import ContactUs from "./pages/contactus";
 import "./App.css";
 const App = () => {
   const [Usercame, setUsercame] = useState(false);
