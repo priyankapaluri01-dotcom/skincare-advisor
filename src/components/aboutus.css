@@ -1,0 +1,260 @@
+
+.about-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  text-align: center;
+  background-color: #fff;
+}
+
+
+.about-header h1 {
+  color: #004d40; 
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.intro-text {
+  color: #555;
+  line-height: 1.7;
+  max-width: 850px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+}
+
+.ingredients-grid {
+  display: flex;
+  flex-direction: row; 
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 60px;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column; 
+}
+
+.column-header {
+  padding: 25px;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.green-bg { background-color: #006400; }
+.pink-bg { background-color: #ff8da1; }
+
+
+.ingredient-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+}
+
+.ingredient-list li {
+  padding: 18px 30px;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.good li { color: #006400; }
+.bad li { color: #ff8da1; }
+
+.ingredient-list li:hover {
+  background-color: #f9f9f9;
+  padding-left: 35px;
+}
+
+.ingredient-list li span {
+  font-weight: bold;
+  opacity: 0.4;
+  font-size: 1.2rem;
+}
+
+.subscribe-section {
+  background-color: #dcedc8; 
+  padding: 60px 20px;
+  border-radius: 15px;
+  margin: 60px 0;
+  text-align: center;
+}
+
+.subscribe-section h2 {
+  font-size: 2.2rem;
+  color: #1b5e20;
+  margin-bottom: 15px;
+}
+
+.squad-text {
+  font-family: 'Brush Script MT', cursive; 
+  font-size: 2.8rem;
+  font-weight: 400;
+}
+
+.subscribe-section p {
+  color: #33691e;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.subscribe-form input {
+  padding: 15px 25px;
+  width: 70%;
+  border: 1px solid #fff;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.subscribe-form button {
+  padding: 15px 35px;
+  background-color: #004d40;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.subscribe-form button:hover {
+  background-color: #002d25;
+}
+
+.sub-text-link {
+  display: block;
+  margin-top: 20px;
+  font-weight: 700;
+  color: #1b5e20;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.expert-note {
+  margin-top: 40px;
+  padding: 50px;
+  background: #fdfdfd;
+  border: 1px dashed #ccc;
+  border-radius: 25px;
+  color: #666;
+}
+.who-we-are {
+  margin: 80px auto;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.who-we-are h2 {
+  font-size: 2.4rem;
+  color: #004d40;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.glow-text {
+  color: #ff8da1; /* Mana brand pink color */
+}
+
+.who-we-are p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+
+.who-we-are p::first-letter {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #006400;
+}
+.accordion-item {
+  display: flex;
+  flex-direction: column !important; /* Stack header and content */
+  border-bottom: 1px solid #f0f0f0;
+  padding: 0 !important; /* Remove li default padding */
+}
+
+.accordion-header {
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.accordion-header span {
+  font-weight: 600;
+  color: #006400;
+}
+
+.accordion-header .active-text {
+  color: #2e7d32; /* Slightly different green when active */
+}
+
+.accordion-content {
+  padding: 0 25px 20px 25px;
+  background-color: #f9f9f9;
+  animation: fadeIn 0.3s ease-in; /* Smooth opening effect */
+}
+
+.accordion-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 768px) {
+  .ingredients-grid {
+    flex-direction: column;
+  }
+  .about-header h1 {
+    font-size: 2rem;
+  }
+  .subscribe-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .subscribe-form input, 
+  .subscribe-form button {
+    width: 100%;
+    border-radius: 5px;
+  }
+}

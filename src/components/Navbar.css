@@ -1,0 +1,163 @@
+/* 1. TOP NAV BAR LAYOUT */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 70px; /* Sleeker height */
+  background: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-section {
+  display: flex;
+  align-items: center;
+  flex: 1; /* Keeps left and right sections balanced */
+}
+
+.nav-section.center {
+  justify-content: center;
+  flex: 2; /* Gives the logo more room to stay centered */
+}
+
+.nav-section.right {
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1001; /* Ensures the pink button stays on top for clicking */
+}
+
+.nav-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 2px;
+  color: #333;
+}
+
+/* 2. PINK LOGIN BUTTON */
+.nav-login-btn {
+  background: linear-gradient(90deg, #f06292, #ec407a);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  pointer-events: auto; /* Guarantees clickability */
+  box-shadow: 0 4px 10px rgba(236, 64, 122, 0.2);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.nav-login-btn:hover {
+  opacity: 0.9;
+}
+
+.nav-login-btn:active {
+  transform: scale(0.95); /* Visual feedback when clicked */
+}
+
+/* 3. SIDEBAR BOX - Structured & Sleek */
+.side-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 260px; /* Sleek width */
+  background: #ffffff;
+  z-index: 1100;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+
+  /* Slide Animation */
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; 
+}
+
+.side-navbar.open {
+  transform: translateX(0);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.menu-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* 4. SIDEBAR LINKS - Vertical Alignment Fix */
+.side-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Force items to stack vertically */
+  gap: 5px;
+}
+
+.side-links li {
+  width: 100%;
+}
+
+.side-links a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #444;
+  font-size: 0.95rem;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.side-links a:hover {
+  background-color: #fff1f3; /* Light pink theme */
+  color: #ec407a;
+  transform: translateX(5px);
+}
+
+/* 5. OVERLAY & UTILS */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px); /* Modern blur effect */
+  z-index: 1050;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  transition: color 0.2s;
+}
+
+.icon-btn:hover {
+  color: #ec407a;
+}
+
+.nav-divider {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 15px 0;
+}

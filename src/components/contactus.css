@@ -1,0 +1,139 @@
+.contact-page-wrapper {
+  background-color: #fff;
+  padding-bottom: 50px;
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.contact-title {
+  color: #386641;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.contact-container h2 {
+  color: #6a994e;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  margin-bottom: 50px; /* Space before caution notice */
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea, select {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px; 
+  outline: none;
+}
+
+/* Checkbox Alignment Fix */
+.checkbox-aligner {
+  display: flex; 
+  align-items: flex-start; 
+  gap: 12px; 
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.checkbox-aligner input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 4px; 
+  accent-color: #386641; 
+  flex-shrink: 0; 
+}
+
+.checkbox-aligner span {
+  font-size: 0.85rem;
+  line-height: 1.4; 
+  color: #555; 
+  text-align: left; 
+}
+
+.marketing-text {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.submit-btn {
+  background-color: #1b4332;
+  color: white;
+  padding: 12px 60px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  align-self: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.caution-notice {
+  text-align: left;
+  background-color: #fff9f9;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #ffebee;
+  margin-top: 40px;
+}
+
+.caution-notice h3 {
+  color: #bc4749;
+  margin-bottom: 10px;
+}
+
+/* Subscribe Section */
+.subscribe-section {
+  background-color: #f1f8e9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.subscribe-form input {
+  width: 300px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+
+.subscribe-form button {
+  background-color: #386641;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .form-row { flex-direction: column; }
+}
