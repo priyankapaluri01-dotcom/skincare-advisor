@@ -4,9 +4,7 @@ import './Hero.css';
 
 const Hero = () => {
   const navigate = useNavigate();
-
   const [query, setQuery] = useState(""); 
-  const[Makeup,setMakeup] = useState("");
 
   const handleSearch = (e) => {
     if (e.key === "Enter" && query.trim() !== "") {
@@ -15,46 +13,70 @@ const Hero = () => {
   };
 
   const skinTypes = [
-    { name: 'Skincare', color: '#e3f2fd', icon: '🧴' },
-     { name: 'Makeup', color: '#fce4ec', icon: '💄' },
+    { 
+      name: 'Skincare Quiz', 
+      color: '#e3f2fd', 
+      icon: '🧴', 
+      desc: 'Find your perfect routine',
+      path: 'skin' 
+    },
+    { 
+      name: 'Makeup Quiz', 
+      color: '#fce4ec', 
+      icon: '💄', 
+      desc: 'Discover your shade',
+      path: 'makeup' 
+    },
   ];
 
   return (
-    <div className="Bag"> 
-      <div className="lunchbox">
+    <div className="hero-wrapper"> 
+      <div className="content-container">
 
-        <section className="item-1">
-          <h1>Care for the skin<span className="highlight">You're in.</span></h1>
-          <p className="subtitle">Feels like you need a right guidance ? You are in right place </p>
+        <section className="hero-main">
+          <h1 className="hero-title">
+            Care for the skin <span className="highlight">You're In.</span>
+          </h1>
+          <p className="hero-subtitle">
+            Personalized guidance for your unique glow.
+          </p>
 
-          <input
-            type="text"
-            placeholder="Rant about your skin .."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyDown={handleSearch}
-            className="search-input"
-          />
+          <div className="search-box-wrapper">
+            <input
+              type="text"
+              placeholder="Tell us about your skin concerns..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleSearch}
+              className="glow-search"
+            />
+            <span className="search-hint"></span>
+          </div>
         </section>
 
-        <section className="item-2">
+        <section className="quiz-section">
           <h2 className="section-title">Start your journey here.</h2>
-          <div className="skincardsbox">
+          <div className="cards-grid">
             {skinTypes.map((type) => (
               <div
                 key={type.name}
-                className="skin-card"
-                onClick={() => navigate(`/routine/${type.name.toLowerCase()}`)}
-                style={{ '--card-bg': type.color }}
+                className="premium-card"
+                onClick={() => navigate(`/routine/${type.path}`)}
+                style={{ '--accent-bg': type.color }}
               >
-                <div className="skin-icon">{type.icon}</div>
-                <h3>{type.name}</h3>
+                <div className="card-content">
+                  <div className="card-icon-wrapper" style={{ backgroundColor: type.color }}>
+                    {type.icon}
+                  </div>
+                  <h3>{type.name}</h3>
+                  <p>{type.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
-        <footer className="footer">
+        <footer className="hero-footer">
           <p><em>"Skincare is a journey, not a destination. Let's find your path."</em></p>
         </footer>
 

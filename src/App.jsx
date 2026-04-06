@@ -7,7 +7,9 @@ import CreateAccount from './pages/createaccount';
 import Routine from './components/routine';
 import AboutUs from "./pages/aboutus";
 import ContactUs from "./pages/contactus";
+import profile from "./pages/Myaccount";
 import "./App.css";
+import Myaccount from "./pages/Myaccount";
 const App = () => {
   const [Usercame, setUsercame] = useState(false);
   return (
@@ -25,7 +27,7 @@ const App = () => {
         <Route path="/write-query" element={<Hero />} /> 
         <Route path="/suggestions" element={<Hero />} />
         <Route path="/book-demo" element={<Hero />} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path ="/profile" element ={<Myaccount/>}/>
       </Routes>
     </div>
   );

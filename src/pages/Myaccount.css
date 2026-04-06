@@ -1,0 +1,81 @@
+.profile-page-wrapper {
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+.sk-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.sk-nav-back {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.sk-main-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FIXING THE GIANT ICON */
+.sk-illustration .sk-img {
+  width: 120px; /* Size ikkada control avthundi */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.sk-welcome-msg {
+  color: #999;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* FIXING OVERLAPPING BUTTONS */
+.sk-action-btns {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  justify-content: center;
+  flex-wrap: wrap; /* Mobile lo okati kindha okati raadaniki */
+}
+
+.sk-btn {
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+
+.sk-btn-cyan {
+  background-color: #00bcd4;
+  color: white;
+}
+
+.sk-btn-cyan:hover {
+  background-color: #0097a7;
+}
+
+.sk-signout-btn {
+  margin-top: 60px;
+  background: none;
+  border: none;
+  color: #ff5252;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.sk-icon-rev {
+  margin-right: 5px;
+}
