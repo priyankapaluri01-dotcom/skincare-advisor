@@ -22,7 +22,6 @@
   padding: 100px 20px;
 }
 
-/* --- Hero Section --- */
 .hero-main {
   text-align: center;
   margin-bottom: 80px;
@@ -55,7 +54,6 @@
   margin: 0 auto 40px;
 }
 
-/* --- Bright Search Bar --- */
 .search-box-wrapper {
   max-width: 550px;
   margin: 0 auto;
@@ -79,7 +77,6 @@
   transform: scale(1.03);
 }
 
-/* --- Vibrant Quiz Cards --- */
 .quiz-section {
   position: relative;
 }
@@ -110,17 +107,13 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
-/* Specific vibrant backgrounds for cards */
 .premium-card:nth-child(1) { border-bottom: 6px solid #4facfe; } /* Blue Glow */
 .premium-card:nth-child(2) { border-bottom: 6px solid #f093fb; } /* Pink Glow */
-
 .premium-card:hover {
   transform: translateY(-20px) scale(1.05);
   box-shadow: var(--card-shadow);
   background: #fffafa;
 }
-
 .card-icon-wrapper {
   width: 90px;
   height: 90px;
@@ -134,24 +127,20 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
 }
-
 .premium-card:hover .card-icon-wrapper {
   transform: rotate(15deg);
 }
-
 .premium-card h3 {
   font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: 12px;
   color: var(--text-dark);
 }
-
 .premium-card p {
   font-size: 1rem;
   color: #64748b;
   line-height: 1.4;
 }
-
 .hero-footer {
   margin-top: 120px;
   padding-bottom: 40px;

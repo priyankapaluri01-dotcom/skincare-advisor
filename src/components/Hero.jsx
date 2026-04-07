@@ -1,17 +1,18 @@
 import React, { useState } from 'react'; 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 import './Hero.css';
 
 const Hero = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //programmatic routing 
   const [query, setQuery] = useState(""); 
 
   const handleSearch = (e) => {
-    if (e.key === "Enter" && query.trim() !== "") {
-      navigate(`/search?q=${query}`);
+    if (e.key === "Enter" && query.trim() !== "")  // in general .trim is used for data cleaning methos 
+    {
+      navigate(`/search?q=${query}`); // this is how programmatic routing works , routing to a page after certain program logic is done
     }
   };
-
+  //just in case , if i want to add things later and wanted to use these as reusable , so stores these as array 
   const skinTypes = [
     { 
       name: 'Skincare Quiz', 
@@ -47,10 +48,9 @@ const Hero = () => {
               placeholder="Tell us about your skin concerns..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={handleSearch}
+              onKeyDown={handleSearch}  // without using search button jusst giving results 
               className="glow-search"
             />
-            <span className="search-hint"></span>
           </div>
         </section>
 
@@ -61,8 +61,8 @@ const Hero = () => {
               <div
                 key={type.name}
                 className="premium-card"
-                onClick={() => navigate(`/routine/${type.path}`)}
-                style={{ '--accent-bg': type.color }}
+                onClick={() => navigate(`/routine/${type.path}`)} //Dynamic routing
+                style={{ '--accent-bg': type.color }}  //css variable injection 
               >
                 <div className="card-content">
                   <div className="card-icon-wrapper" style={{ backgroundColor: type.color }}>

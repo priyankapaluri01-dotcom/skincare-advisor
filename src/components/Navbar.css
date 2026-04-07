@@ -1,32 +1,33 @@
-/* 1. TOP NAV BAR LAYOUT */
+
 .top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-  height: 70px; /* Sleeker height */
+  height: 70px;
   background: #ffffff;
   border-bottom: 1px solid #f0f0f0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  font-family: 'Inter', sans-serif;
 }
 
 .nav-section {
   display: flex;
   align-items: center;
-  flex: 1; /* Keeps left and right sections balanced */
+  flex: 1;
 }
 
 .nav-section.center {
   justify-content: center;
-  flex: 2; /* Gives the logo more room to stay centered */
+  flex: 2;
 }
 
 .nav-section.right {
   justify-content: flex-end;
   position: relative;
-  z-index: 1001; /* Ensures the pink button stays on top for clicking */
+  z-index: 1001;
 }
 
 .nav-logo {
@@ -35,43 +36,44 @@
   cursor: pointer;
   letter-spacing: 2px;
   color: #333;
+  margin: 0;
 }
-
-/* 2. PINK LOGIN BUTTON */
-.nav-login-btn {
+.login-outline-btn {
   background: linear-gradient(90deg, #f06292, #ec407a);
   color: white;
   border: none;
-  padding: 10px 24px;
-  border-radius: 10px;
+  padding: 10px 28px;
+  border-radius: 50px; /* Modern pill shape */
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
-  pointer-events: auto; /* Guarantees clickability */
-  box-shadow: 0 4px 10px rgba(236, 64, 122, 0.2);
-  transition: transform 0.2s, opacity 0.2s;
+  pointer-events: auto;
+  box-shadow: 0 4px 15px rgba(236, 64, 122, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
 }
 
-.nav-login-btn:hover {
-  opacity: 0.9;
+.login-outline-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(236, 64, 122, 0.4);
+  filter: brightness(1.05);
 }
 
-.nav-login-btn:active {
-  transform: scale(0.95); /* Visual feedback when clicked */
+.login-outline-btn:active {
+  transform: translateY(0) scale(0.96);
 }
-
-/* 3. SIDEBAR BOX - Structured & Sleek */
 .side-navbar {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
-  width: 260px; /* Sleek width */
+  width: 260px;
   background: #ffffff;
   z-index: 1100;
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
-
-  /* Slide Animation */
   transform: translateX(-100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 20px;
@@ -97,18 +99,13 @@
   color: #333;
 }
 
-/* 4. SIDEBAR LINKS - Vertical Alignment Fix */
 .side-links {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column; /* Force items to stack vertically */
+  flex-direction: column;
   gap: 5px;
-}
-
-.side-links li {
-  width: 100%;
 }
 
 .side-links a {
@@ -124,12 +121,11 @@
 }
 
 .side-links a:hover {
-  background-color: #fff1f3; /* Light pink theme */
+  background-color: #fff1f3;
   color: #ec407a;
   transform: translateX(5px);
 }
 
-/* 5. OVERLAY & UTILS */
 .sidebar-overlay {
   position: fixed;
   top: 0;
@@ -137,7 +133,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(3px); /* Modern blur effect */
+  backdrop-filter: blur(3px);
   z-index: 1050;
 }
 

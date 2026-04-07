@@ -3,18 +3,19 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import CreateAccount from './pages/createaccount';
-import Routine from './components/routine';
-import AboutUs from "./pages/aboutus";
-import ContactUs from "./pages/contactus";
-import profile from "./pages/Myaccount";
-import "./App.css";
+import CreateAccount from './pages/CreateAccount'; 
+import Routine from './components/Routine';
+import AboutUs from "./pages/AboutUs";          
+import ContactUs from "./pages/ContactUs";       
 import Myaccount from "./pages/Myaccount";
+import "./App.css";
+
 const App = () => {
   const [Usercame, setUsercame] = useState(false);
+  
   return (
     <div className="app-container">
-      <Navbar Usercame={Usercame} />
+      <Navbar Usercame={Usercame} /> 
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/login" element={
@@ -27,7 +28,8 @@ const App = () => {
         <Route path="/write-query" element={<Hero />} /> 
         <Route path="/suggestions" element={<Hero />} />
         <Route path="/book-demo" element={<Hero />} />
-        <Route path ="/profile" element ={<Myaccount/>}/>
+        <Route path="/profile" element={<Myaccount/>}/>
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   );

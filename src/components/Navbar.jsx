@@ -5,7 +5,7 @@ import {
   MessageSquare, HeartHandshake, HelpCircle, Calendar 
 } from 'lucide-react';
 import "./Navbar.css";
-const Navbar = ({ Usercame }) => {
+const Navbar = ({ Usercame }) => { //p.drilling
   const [userclicked, setuserclicked] = useState(false);
   const navigate = useNavigate();
   const toggleMenu = () => setuserclicked(!userclicked);
@@ -41,7 +41,7 @@ const Navbar = ({ Usercame }) => {
         <ul className="side-links">
           <li><Link to="/" onClick={toggleMenu}><BookOpen size={18} /> Home</Link></li>
           <li><Link to="/aboutus" onClick={toggleMenu}><HeartHandshake size={18} /> About Us</Link></li>
-          <li><Link to="/write-query" onClick={toggleMenu}><PenTool size={18} /> Philosophy</Link></li>
+          <li><Link to="/tips" onClick={toggleMenu}><PenTool size={18} />Skincare Tips</Link></li>
           <li><Link to="/suggestions" onClick={toggleMenu}><HelpCircle size={18} /> Reviews</Link></li>
           <li><Link to="/book-demo" onClick={toggleMenu}><Calendar size={18} /> Book a call</Link></li>
           <li><Link to="/contactus" onClick={toggleMenu}><MessageSquare size={18} /> Contact Us</Link></li>
