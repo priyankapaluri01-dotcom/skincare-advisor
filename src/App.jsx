@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Login from "./pages/Login";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import CreateAccount from './pages/CreateAccount'; 
-import Routine from './components/Routine';
-import AboutUs from "./pages/AboutUs";          
-import ContactUs from "./pages/ContactUs";       
-import Myaccount from "./pages/Myaccount";
+import Login from "./pages/Login.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Hero from "./components/Hero.jsx";
+import CreateAccount from './pages/createaccount.jsx'; 
+import Routine from './components/routine.jsx';
+import AboutUs from "./pages/aboutus.jsx";          
+import ContactUs from "./pages/contactus.jsx";       
+import Myaccount from "./pages/Myaccount.jsx";
 import "./App.css";
 
 const App = () => {
