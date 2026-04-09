@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,700&display=swap');
 
-/* Main Container */
 .about-page {
   max-width: 1100px;
   margin: 0 auto;
@@ -11,7 +10,7 @@
   color: #2c3e50;
 }
 
-/* Header */
+
 .about-header {
   margin-bottom: 120px;
 }
@@ -46,7 +45,6 @@
   font-size: 1.2rem;
 }
 
-/* Vision Card */
 .vision-section {
   margin-bottom: 150px;
 }
@@ -80,7 +78,6 @@
   margin-bottom: 20px;
 }
 
-/* Tech Stack Section */
 .logic-note-section {
   max-width: 850px;
   margin: 0 auto 150px;
@@ -164,7 +161,6 @@
   animation: fadeIn 0.4s ease;
 }
 
-/* Subscribe Section */
 .subscribe-section {
   background-color: #f1f8e9;
   padding: 80px 40px;
@@ -219,7 +215,6 @@
   margin-top: 10px;
 }
 
-/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
@@ -234,7 +229,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .about-page { padding: 60px 20px; }
   .about-header h1 { font-size: 2.2rem; }

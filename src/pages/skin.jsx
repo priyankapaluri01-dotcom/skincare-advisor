@@ -105,14 +105,12 @@ const SkinQuiz = () => {
             <div className="step-card pastel-yellow clickable-card" onClick={startwork}>
               <div className="final-content">
                 <h2 className="final-text">It's been <br/> an hour!</h2>
-                <p className="tap-hint">Tap to start</p>
+                
               </div>
             </div>
           </div>
         </div>
       )}
-
-      {/* STEP 2: MAIN CATEGORY */}
       {currentStep === 2 && (
         <div className="quiz-section content-fade-in">
           <h1 className="quiz-title">How does your face look?</h1>
@@ -132,8 +130,6 @@ const SkinQuiz = () => {
           </div>
         </div>
       )}
-
-      {/* STEP 3: DEEP DIVE */}
       {currentStep === 3 && (
         <div className="quiz-section content-fade-in">
           <h2 className="sub-heading">Examine and touch your skin.</h2>
@@ -151,8 +147,6 @@ const SkinQuiz = () => {
           </div>
         </div>
       )}
-
-      {/* STEP 4: RESULT PAGE (Bubble Inspired) */}
       {currentStep === 4 && finalSkinType && (
         <div className="result-container content-fade-in">
           <h2 className="sub-heading">Analysis Complete</h2>
