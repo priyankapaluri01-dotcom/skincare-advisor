@@ -3,12 +3,15 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from "./pages/Login.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
-import CreateAccount from './pages/createaccount.jsx'; 
-import Routine from './components/routine.jsx';
+import CreateAccount from './pages/createaccount.jsx';
 import AboutUs from "./pages/aboutus.jsx";          
 import ContactUs from "./pages/contactus.jsx";       
 import Myaccount from "./pages/Myaccount.jsx";
 import "./App.css";
+import SkincareTips from "./pages/skincaretips.jsx";
+import Bookacall from "./pages/bookacall.jsx";
+import Skin from './pages/skin.jsx'; 
+
 
 const App = () => {
   const [Usercame, setUsercame] = useState(false);
@@ -22,14 +25,14 @@ const App = () => {
           Usercame ? <Navigate to="/" /> : <Login setUsercame={setUsercame} />
         } />
         <Route path="/join-us" element={<CreateAccount />} />
-        <Route path="/routine/:type" element={<Routine />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/write-query" element={<Hero />} /> 
         <Route path="/suggestions" element={<Hero />} />
-        <Route path="/book-demo" element={<Hero />} />
+        <Route path="/book-call" element={<Bookacall />} />
         <Route path="/profile" element={<Myaccount/>}/>
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/tips" element={<SkincareTips />} />
+        <Route path="/skin" element={<Skin />} />
       </Routes>
     </div>
   );

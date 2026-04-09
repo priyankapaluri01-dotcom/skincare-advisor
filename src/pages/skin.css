@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Playfair+Display:italic,wght@600;700&display=swap');
+
+.skin-container {
+  background-color: #f8fdff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.main-layout, .quiz-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.main-heading, .quiz-title {
+  font-family: 'Playfair Display', serif;
+  color: #000 !important;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.main-heading { font-size: 2.2rem; margin-bottom: 20px; }
+.quiz-title { font-size: 2.5rem; margin-bottom: 30px; }
+
+.sub-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #000;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.quiz-text, .step-text, .step-number, .final-text {
+  color: #000 !important;
+  text-align: center;
+}
+
+/* 2. SPACING - Balanced 30px */
+.steps-wrapper, .options-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 30px; 
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* 3. CARD STYLES */
+.step-card {
+  width: 190px;
+  height: 270px;
+  background: #ffffff;
+  border: 1.2px solid #000;
+  border-radius: 20px;
+  padding: 25px 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.clickable-card { cursor: pointer; }
+.clickable-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+/* 4. SHAPES */
+.quiz-card {
+  width: 155px;
+  height: 155px;
+  background: #ffffff;
+  border: 1.2px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.quiz-card:hover { transform: scale(1.05); }
+
+.shape-rectangle { width: 220px; height: 140px; border-radius: 40px; }
+.shape-circle { border-radius: 50%; }
+.shape-rhombus { transform: rotate(45deg); margin: 0 10px; }
+.shape-square { border-radius: 18px; }
+
+.inner-text { transform: rotate(-45deg); display: block; }
+
+.deep-dive-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-large { font-size: 2rem; }
+
+/* 5. COMPONENTS */
+.final-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-top: 50px; }
+.tap-hint { font-size: 0.7rem; text-transform: uppercase; font-weight: 600; opacity: 0.5; margin-top: 5px; }
+
+.back-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 35px;
+}
+.pastel-blue { background-color: #f1f8ff; }
+.pastel-green { background-color: #f2faf5; }
+.pastel-red { background-color: #fff6f6; }
+.pastel-yellow { background-color: #fffdef; }
+.pastel-pink { background-color: #fff2f7; }
+.pastel-teal { background-color: #e4f7f6; }
+
+.icon-badge {
+  position: absolute; top: -18px; right: 15px; width: 38px; height: 38px;
+  background: #fff; border: 1.2px solid #000; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; font-size: 18px;
+}
+
+.pagination { margin-top: 25px; display: flex; gap: 10px; }
+.dot { width: 6px; height: 6px; background: #d1d1d1; border-radius: 50%; }
+.dot.active { background: #000; width: 18px; border-radius: 10px; }
+
+.content-fade-in { animation: fadeIn 0.5s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ... Keep your existing CSS imports and Skin Container styles ... */
+
+/* [RESULTS PAGE STYLES] */
+.result-container {
+  max-width: 800px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.result-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.result-title .highlight {
+  font-style: italic;
+}
+
+.result-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.recommendation-grid {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.info-box {
+  flex: 1;
+  padding: 30px;
+  border: 1.2px solid #000;
+  border-radius: 24px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+}
+
+.info-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.info-box p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.reset-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 15px 45px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE FOR MOBILE */
+@media (max-width: 768px) {
+  .recommendation-grid {
+    flex-direction: column;
+  }
+  .result-title {
+    font-size: 2.5rem;
+  }
+}
+

@@ -3,8 +3,7 @@ import { auth, db } from '../firebase';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import './MyAccount.css';
-
+import './Myaccount.css';
 
 function Myaccount() {
   const [userData, setUserData] = useState(null);
@@ -34,46 +33,53 @@ function Myaccount() {
   };
 
   if (loading) return <div className="loading-screen">Loading Profile...</div>;
+
   return (
-  <div className="profile-page-wrapper">
-    <div className="sk-container">
-      <div className="sk-nav-back">
-        <span>‹ My Profile</span>
-      </div>
+    <div className="profile-page-wrapper">
+      <div className="sk-container">
+        <div className="account-header-section">
+          <div className="avatar-large">
+            {userData?.firstName?.charAt(0) || "U"}
+          </div>
+          <h1>Account Settings</h1>
+          <p className="subtitle">Manage your personal information and security</p>
+        </div>
 
-      <div className="sk-main-content">
-        {!userData?.skinType ? (
-          <div className="sk-empty-state">
-            <div className="sk-illustration">
+        <div className="account-grid">
+          <div className="info-card">
+            <h3>Identity</h3>
+            <div className="detail-row">
+              <label>Display Name</label>
+              <p>{userData?.firstName} {userData?.lastName}</p>
             </div>
-            
-            <p className="sk-welcome-msg">
-              Your customized skin  regimens await!<br />
-              Take the quiz and get your products now.
-            </p>
-
-            <div className="sk-action-btns">
-              <button className="sk-btn sk-btn-cyan" onClick={() => navigate('/routine/skin')}>
-                TAKE SKIN QUIZ
-              </button>
-              <button className="sk-btn sk-btn-cyan" onClick={() => navigate('/routine/hair')}>
-                TAKE MAKEUP QUIZ
-              </button>
+            <div className="detail-row">
+              <label>Account Status</label>
+              <p className="status-verified">Verified Member</p>
             </div>
           </div>
-        ) : (
-          <div className="sk-data-display">
-            <h2>Hello, {userData.firstName}!</h2>
-            
+          <div className="info-card">
+            <h3>Contact Information</h3>
+            <div className="detail-row">
+              <label>Primary Email</label>
+              <p>{auth.currentUser?.email}</p>
+            </div>
+            <div className="detail-row">
+              <label>Communication Preference</label>
+              <p>Email Notifications Only</p>
+            </div>
           </div>
-        )}
-
-        <button className="sk-signout-btn" onClick={handleSignOut}>
-          <span className="sk-icon-rev">⟳</span> Sign Out
-        </button>
+        </div>
+        <div className="account-footer">
+          <button className="sk-btn sk-btn-outline" onClick={() => navigate('/')}>
+             Back to Home
+          </button>
+          <button className="sk-signout-btn" onClick={handleSignOut}>
+            Logout Account
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
 }
+
 export default Myaccount;

@@ -1,9 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 
 .top-nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
   height: 70px;
   background: #ffffff;
   border-bottom: 1px solid #f0f0f0;
@@ -11,6 +10,16 @@
   top: 0;
   z-index: 1000;
   font-family: 'Inter', sans-serif;
+}
+
+.nav-inner {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px; 
 }
 
 .nav-section {
@@ -26,87 +35,91 @@
 
 .nav-section.right {
   justify-content: flex-end;
-  position: relative;
-  z-index: 1001;
+  
 }
 
-.nav-logo {
-  font-size: 1.6rem;
-  font-weight: 800;
+
+.logo-shiny {
+  font-family: 'Quicksand', sans-serif !important; 
+  font-size: 2.2rem;
+  font-weight: 900; 
   cursor: pointer;
-  letter-spacing: 2px;
-  color: #333;
   margin: 0;
+  display: inline-block;
+  letter-spacing: -2px; 
+  -webkit-text-stroke: 1px #000; 
+  transform: scaleY(0.92); 
+  background: linear-gradient(180deg, #444 0%, #000 50%, #222 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 1px rgba(0,0,0,0.2));
 }
+.logo-shiny:hover {
+  transform: scale(1.05) scaleY(0.92);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+
 .login-outline-btn {
   background: linear-gradient(90deg, #f06292, #ec407a);
   color: white;
   border: none;
   padding: 10px 28px;
-  border-radius: 50px; /* Modern pill shape */
+  border-radius: 50px;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
-  pointer-events: auto;
   box-shadow: 0 4px 15px rgba(236, 64, 122, 0.3);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  outline: none;
+  transition: all 0.3s ease;
 }
 
 .login-outline-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(236, 64, 122, 0.4);
-  filter: brightness(1.05);
 }
 
-.login-outline-btn:active {
-  transform: translateY(0) scale(0.96);
-}
 .side-navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 260px;
+  top: 0; left: 0;
+  height: 100vh; width: 260px;
   background: #ffffff;
   z-index: 1100;
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
   transform: translateX(-100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 20px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column; 
+  box-sizing: border-box;
 }
 
-.side-navbar.open {
-  transform: translateX(0);
+.side-navbar.open { transform: translateX(0); }
+
+.sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+  z-index: 1050;
 }
 
 .sidebar-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end; /* Keeps the X icon on the right */
   margin-bottom: 25px;
 }
 
-.menu-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #333;
+.icon-btn { 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  color: #333; 
+  display: flex; 
+  align-items: center; 
 }
 
-.side-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
+.side-links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; }
 
 .side-links a {
   display: flex;
@@ -126,34 +139,21 @@
   transform: translateX(5px);
 }
 
-.sidebar-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(3px);
-  z-index: 1050;
+.nav-divider { height: 1px; background: #f0f0f0; margin: 15px 0; }
+
+/* position the left menu toggle and right login button flush to viewport edges */
+.top-nav .menu-trigger {
+  position: absolute;
+  left: 16px; /* small breathing room */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1200;
 }
 
-.icon-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #333;
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  transition: color 0.2s;
-}
-
-.icon-btn:hover {
-  color: #ec407a;
-}
-
-.nav-divider {
-  height: 1px;
-  background: #f0f0f0;
-  margin: 15px 0;
+.top-nav .login-outline-btn {
+  position: absolute;
+  right: 16px; /* small breathing room */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1200;
 }

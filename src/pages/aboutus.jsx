@@ -1,83 +1,104 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
 import './aboutus.css';
 
 const AboutUs = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [activeIndex, setActiveIndex] = useState(null);
-  const navigate = useNavigate(); 
-const toggleAccordion = (index) => {
+
+  const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+
   const handleSubscribe = (e) => {
     e.preventDefault();
-    if(email) {
-      navigate('/login'); 
-    } else {
-      alert("Please enter your email!");
-    }
+    alert(`Welcome to the Glow Squad!`);
+    setEmail('');
   };
 
+  const techStack = [
+    {
+      title: "Development Environment & Tools",
+      content: "I choosed VITE as the bulid tool mainly because of its HMR Feature as it captures the changes super fast.Javascript (E26+) features and Git for professional based version control (proabaly for tracking changes)"
+    },
+    {
+      title: "Core React Architecture (Hooks & Routing)",
+      content: "As a base i used the popular Javascript libary React and in this project i just understand how react this whole works , understood the JSX , and also implemted Basic Hooks (usestate for statemangement,useeffect for sideeffect and understood it lifecycle methods,By React Router i just handled this navigation between views , Event listensers to handle interactions easily  "
+    },
+    {
+      title: "Backend & Database (Firebase)",
+      content: "Used for Auth and learned how this BASS works , used firestore as real time NO-SQL database and handled to store user info "
+    },
+    {
+      title: "UI & Styling (Modern CSS)",
+      content: "With help of AI , I just understand how a flexbox/grid is used , and also learned differnt tranisitons , and also mobile repsonsive design works "
+    },
+    {
+      title: "Production Deployment (Vercel)",
+      content: "Through this I have learned how to handle deployment log erros and also how we can directly deploy from github"
+    }
+  ];
+
   return (
-    <div className="about-page">
-      <div className="about-header">
-        <h1>Know About our Ingredients</h1>
-        <p className="intro-text">The world of skincare is always evolving...</p>
-      </div>
+    <div className="about-page content-fade-in">
+      <header className="about-header">
+        <h2 className="sub-heading">Our Story</h2>
+        <h1>Hi, We're <span className="italic-text">Team Glow</span></h1>
+        <p className="intro-text">
+          We are tech enthusiasts and skincare lovers on a mission to simplify your beauty routine.
+        </p>
+      </header>
 
-      <div className="ingredients-grid">
-        <div className="column good">
-          <div className="column-header green-bg">Good Ingredients</div>
-          <ul className="ingredient-list">
-            <li>Hemp seed Oil <span>&gt;</span></li>
-            <li>Witch Hazel Extract <span>&gt;</span></li>
-            <li>Bisabolol <span>&gt;</span></li>
-            <li>Vitamin E <span>&gt;</span></li>
-            <li>Glycerin <span>&gt;</span></li>
-          </ul>
+      <section className="vision-section">
+        <div className="vision-card">
+          <h2>The Story Behind <span className="glow-highlight">Glow</span></h2>
+          <p className="vision-p">
+            This project started because I realized that skincare shouldn't be a 
+            guessing game. I wanted to build a bridge between <strong>complex dermatological 
+            data</strong> and <strong>simple user choices</strong>.
+          </p>
         </div>
-
-
-        <div className="column bad">
-          <div className="column-header pink-bg">Baddies</div>
-          <ul className="ingredient-list">
-            <li>Fragrance <span>&gt;</span></li>
-            <li>Soap <span>&gt;</span></li>
-            <li>Ethyl Alcohol <span>&gt;</span></li>
-            <li>Salicylic Acid<span>&gt;</span></li>
-            <li>Synthetic colours<span>&gt;</span></li>
-
-          </ul>
+      </section>
+      <section className="logic-note-section">
+        <div className="logic-box">
+          <div className="logic-badge">TECHNICAL STACK</div>
+          <h3>Built From Scratch</h3>
+          <p className="logic-p">Here is the complete tech stack I used to bring Glow to life:</p>
+          
+          <div className="accordion-container">
+            {techStack.map((tech, index) => (
+              <div key={index} className={`accordion-item ${activeIndex === index ? 'active' : ''}`}>
+                <div className="accordion-header" onClick={() => toggleAccordion(index)}>
+                  <span>{tech.title}</span>
+                  <span className={`arrow-icon ${activeIndex === index ? 'open' : ''}`}>▼</span>
+                </div>
+                {activeIndex === index && (
+                  <div className="accordion-content">
+                    <p>{tech.content}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      <section className="who-we-are">
-  <h2>Why Choose <span className="glow-text">Glow</span>?</h2>
-  <p>
-    We are a team of tech enthusiasts and skincare lovers dedicated to simplifying your beauty routine. 
-    At Glow, we don’t just focus on skincare; we understand that makeup is an extension of your skin’s health. 
-    We help you to analyze thousands of ingredients and cross-references them with clinical 
-    dermatological data to provide personalized recommendations. Whether it’s finding the right moisturizer 
-    or a foundation that won't clog your pores, we guide you to products that actually work for your unique 
-    skin type. Give us a try, and let’s make your skin glow together!
-  </p>
-</section>
       <section className="subscribe-section">
-        <h2>Join our <span className="squad-text">Glow Squad</span></h2>
-        <p>For exclusive tips, expert advice, and personalized recommendations.</p>
-        
-        <form className="subscribe-form" onSubmit={handleSubscribe}>
-          <input 
-            type="email" 
-            placeholder="Enter Your Email Id" 
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required 
-          />
-          <button type="submit">Subscribe</button>
-        </form>
-        
-        <p className="sub-text">Subscribe to know more about us !</p>
+        <div className="subscribe-box">
+          <h2>Join our <span className="squad-text">Glow Squad</span></h2>
+          <p>For exclusive tips, expert advice, and personalized recommendations.</p>
+          
+          <form className="subscribe-form" onSubmit={handleSubscribe}>
+            <input 
+              type="email" 
+              placeholder="Enter Your Email Id" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required 
+            />
+            <button type="submit" className="glow-btn">Subscribe</button>
+          </form>
+          <p className="footer-sub-text">Join our community of 500+ glow-getters!</p>
+        </div>
       </section>
     </div>
   );

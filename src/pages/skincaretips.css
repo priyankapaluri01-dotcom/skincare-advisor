@@ -1,0 +1,100 @@
+.tips-page {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+.tips-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tips-header h1 {
+  font-size: 2.5rem;
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.tips-header p {
+  color: #636e72;
+}
+
+.filter-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  padding: 10px 24px;
+  border: 2px solid #fab1a0;
+  background: white;
+  color: #d63031;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.filter-buttons button.active, 
+.filter-buttons button:hover {
+  background: #fab1a0;
+  color: white;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.tip-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  border: 1px solid #f1f2f6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tip-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(250, 177, 160, 0.2);
+}
+
+.tip-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.tip-category {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fab1a0;
+  font-weight: 700;
+}
+
+.tip-card h3 {
+  margin: 10px 0;
+  color: #2d3436;
+}
+
+.tip-card p {
+  color: #636e72;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Mobile Friendly */
+@media (max-width: 600px) {
+  .tips-header h1 {
+    font-size: 1.8rem;
+  }
+}
