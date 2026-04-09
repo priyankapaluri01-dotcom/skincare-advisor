@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './ContactUs.css';
+import './contactus.css';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({

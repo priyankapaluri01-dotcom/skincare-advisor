@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SkincareTips.css";
+import "./skincaretips.css";
 
 const tipsData = [
   {
