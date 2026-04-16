@@ -11,13 +11,13 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: #ffffff;
   padding-bottom: 80px;
-  border: none; /* ensure no outline/border shows */
+  border: none; 
 }
 
 .content-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 48px; /* add side spacing left/right */
+  padding: 60px 48px; 
   display: flex;
   flex-direction: column;
   align-items: center; 
@@ -118,7 +118,7 @@
 }
 
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .hero-title { font-size: 2.5rem; }
   .quiz-main-title { font-size: 2.8rem; }

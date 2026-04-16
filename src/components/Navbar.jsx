@@ -5,10 +5,16 @@ import {
   MessageSquare, HeartHandshake, Calendar 
 } from 'lucide-react';
 import "./Navbar.css";
-const Navbar = ({ Usercame }) => {
+import { useSelector } from 'react-redux';
+
+const Navbar = () => { 
   const [userclicked, setuserclicked] = useState(false);
   const navigate = useNavigate();
+  
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+
   const toggleMenu = () => setuserclicked(!userclicked);
+
   return (
     <>
       <nav className="top-nav">
@@ -24,8 +30,9 @@ const Navbar = ({ Usercame }) => {
           </div>
 
           <div className="nav-section right">
-            {Usercame ? (
-              <User className="user-icon" onClick={() => navigate('/profile')} />
+            
+            {isLoggedIn ? (
+              <User className="user-icon" onClick={() => navigate('/myaccount')} />
             ) : (
               <button className="login-outline-btn" onClick={() => navigate('/login')}>
                 Login
@@ -50,8 +57,8 @@ const Navbar = ({ Usercame }) => {
           <li><Link to="/book-call" onClick={toggleMenu}><Calendar size={18} /> Book a call</Link></li>
           <li><Link to="/contactus" onClick={toggleMenu}><MessageSquare size={18} /> Contact Us</Link></li>
           <div className="nav-divider"></div>
-          {Usercame && (
-            <li><Link to="/profile" onClick={toggleMenu}><User size={18} /> My Profile</Link></li>
+          {isLoggedIn && (
+            <li><Link to="/myaccount" onClick={toggleMenu}><User size={18} /> My Profile</Link></li>
           )}
         </ul>
       </div>

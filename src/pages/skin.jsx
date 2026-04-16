@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setStep, saveAnswer, setFinalType, resetQuiz } from '../utils/skinSlice';
 import './skin.css';
 
 const SkinQuiz = () => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const dispatch = useDispatch();
+  
+  
+  const skinState = useSelector((state) => state.skin) || {};
+  const currentStep = skinState.currentStep || 1;
+  const finalSkinTypeKey = skinState.finalSkinType || '';
+
   const [selectedMainType, setSelectedMainType] = useState('');
-  const [finalSkinType, setFinalSkinType] = useState(null);
+
   const recommendations = {
     'Dry': {
       title: 'Dry Skin',
@@ -63,26 +71,29 @@ const SkinQuiz = () => {
     ]
   };
 
-  const startwork = () => setCurrentStep(2);
+  const finalSkinType = recommendations[finalSkinTypeKey] || null;
+
+  const startwork = () => dispatch(setStep(2));
 
   const clickmemory = (type) => {
     setSelectedMainType(type);
-    setCurrentStep(3);
+    dispatch(saveAnswer({ question: 'mainConcern', answer: type }));
+    dispatch(setStep(3));
   };
 
   const lookup = (resultType) => {
-    setFinalSkinType(recommendations[resultType]);
-    setCurrentStep(4);
+    dispatch(setFinalType(resultType));
+    dispatch(setStep(4));
   };
 
   const goback = () => {
-    setCurrentStep(1);
+    dispatch(resetQuiz());
     setSelectedMainType('');
-    setFinalSkinType(null);
   };
 
   return (
     <div className="skin-container">
+      {/* STEP 1 */}
       {currentStep === 1 && (
         <div className="content-fade-in main-layout">
           <h1 className="main-heading">Determining your skin type <br/> can be done with a simple test.</h1>
@@ -105,37 +116,37 @@ const SkinQuiz = () => {
             <div className="step-card pastel-yellow clickable-card" onClick={startwork}>
               <div className="final-content">
                 <h2 className="final-text">It's been <br/> an hour!</h2>
-                
               </div>
             </div>
           </div>
         </div>
       )}
+
+      {/* STEP 2 */}
       {currentStep === 2 && (
         <div className="quiz-section content-fade-in">
           <h1 className="quiz-title">How does your face look?</h1>
           <div className="options-wrapper">
-            <div className="quiz-card shape-rectangle pastel-yellow" onClick={() => clickmemory('Red & Irritated')}>
-              <span className="quiz-text">Red & Irritated</span>
-            </div>
-            <div className="quiz-card shape-circle pastel-pink" onClick={() => clickmemory('Shiny & Greasy')}>
-              <span className="quiz-text">Shiny & Greasy</span>
-            </div>
-            <div className="quiz-card shape-rhombus pastel-teal" onClick={() => clickmemory('Partly Greasy')}>
-              <span className="quiz-text inner-text">Partly Greasy</span>
-            </div>
-            <div className="quiz-card shape-square pastel-blue" onClick={() => clickmemory('Normal')}>
-              <span className="quiz-text">Normal</span>
-            </div>
+            {Object.keys(deepDiveQuestions).map((key) => (
+              <div 
+                key={key}
+                className="quiz-card shape-rectangle pastel-yellow" 
+                onClick={() => clickmemory(key)}
+              >
+                <span className="quiz-text">{key}</span>
+              </div>
+            ))}
           </div>
         </div>
       )}
-      {currentStep === 3 && (
+
+      {/* STEP 3 - Added Safety Check for selectedMainType */}
+      {currentStep === 3 && selectedMainType && (
         <div className="quiz-section content-fade-in">
           <h2 className="sub-heading">Examine and touch your skin.</h2>
           <h1 className="quiz-title">How does it look and feel?</h1>
           <div className="options-wrapper">
-            {deepDiveQuestions[selectedMainType].map((option, index) => (
+            {deepDiveQuestions[selectedMainType]?.map((option, index) => (
               <div 
                 key={index} 
                 className={`quiz-card shape-square ${index % 2 === 0 ? 'pastel-green' : 'pastel-yellow'}`}
@@ -168,11 +179,12 @@ const SkinQuiz = () => {
         </div>
       )}
 
+    
       {currentStep < 4 && (
         <div className="pagination">
-          <span className={`dot ${currentStep === 1 ? 'active' : ''}`}></span>
-          <span className={`dot ${currentStep === 2 ? 'active' : ''}`}></span>
-          <span className={`dot ${currentStep === 3 ? 'active' : ''}`}></span>
+          {[1, 2, 3].map((dot) => (
+            <span key={dot} className={`dot ${currentStep === dot ? 'active' : ''}`}></span>
+          ))}
         </div>
       )}
     </div>

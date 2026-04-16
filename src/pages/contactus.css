@@ -1,21 +1,20 @@
-/* --- Global Wrapper --- */
+
 .contact-page-wrapper {
-  background-color: #fafafa; /* Light grey background makes the white boxes pop */
+  background-color: #fafafa; 
   padding: 60px 20px;
   font-family: 'Inter', sans-serif;
 }
 
-/* --- Main Card Container --- */
+
 .contact-container {
   max-width: 800px;
   margin: 0 auto;
   background: #ffffff;
   padding: 50px;
   border-radius: 30px;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05); /* Modern soft shadow */
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05); 
 }
 
-/* --- Header --- */
 .contact-header {
   text-align: center;
   margin-bottom: 40px;
@@ -38,7 +37,6 @@
   font-style: italic;
 }
 
-/* --- Form Layout --- */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -54,11 +52,10 @@
   flex: 1;
 }
 
-/* --- The "Boxed" Input Style --- */
 input, select, textarea {
   width: 100%;
   padding: 18px 20px;
-  background-color: #f8f8f8; /* Box color */
+  background-color: #f8f8f8; 
   border: 1px solid #eee;
   border-radius: 15px;
   font-size: 1rem;
@@ -69,11 +66,11 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
   background-color: #fff;
-  border-color: #ec407a; /* Glow Pink accent */
+  border-color: #ec407a; 
   box-shadow: 0 0 0 4px rgba(236, 64, 122, 0.05);
 }
 
-/* --- Consent Section --- */
+
 .consent-section {
   background: #fffcfc;
   padding: 20px;
@@ -109,7 +106,6 @@ input:focus, select:focus, textarea:focus {
   line-height: 1.5;
 }
 
-/* --- Submit Button --- */
 .submit-btn {
   background-color: #000;
   color: #fff;
@@ -131,7 +127,6 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* --- Caution Notice --- */
 .caution-notice {
   margin-top: 50px;
   padding: 30px;
@@ -154,7 +149,7 @@ input:focus, select:focus, textarea:focus {
   margin: 5px 0;
 }
 
-/* --- Subscribe Section --- */
+
 .subscribe-section {
   margin-top: 80px;
   padding: 80px 20px;

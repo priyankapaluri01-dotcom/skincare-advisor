@@ -4,8 +4,10 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate, Link } from 'react-router-dom';
 import './Login.css'; 
 import { Eye, EyeOff } from 'lucide-react';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../utils/userslice';
 
-function LoginForm({ setUsercame }) {
+function LoginForm() { 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -13,6 +15,8 @@ function LoginForm({ setUsercame }) {
   const [errorMessage, setErrorMessage] = useState(''); 
   
   const navigate = useNavigate();
+  const dispatch = useDispatch(); 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -20,28 +24,33 @@ function LoginForm({ setUsercame }) {
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log("Logged in user:", userCredential.user.email);
+      
+      const loggedInUser = {
+        uid: userCredential.user.uid,
+        email: userCredential.user.email,
+      
+      };
+
+
+      dispatch(setUser(loggedInUser)); 
       
       setLoading(false);
-      setUsercame(true); 
       navigate('/'); 
     } catch (error) {
       setLoading(false);
-      console.error("Login Error Code:", error.code);
+     
       if (error.code === 'auth/invalid-credential') {
         setErrorMessage("Invalid email or password. Please check again!");
-      } else if (error.code === 'auth/user-not-found') {
-        setErrorMessage("No account found with this email.");
-      } else if (error.code === 'auth/wrong-password') {
-        setErrorMessage("Incorrect password.");
       } else {
         setErrorMessage("Something went wrong. Please try again later.");
       }
     }
   };
+
   return (
     <div className="login-wrap">
-      <div className="login-container-stack">
+       {/* ... (rest of your JSX remains the same) */}
+       <div className="login-container-stack">
         <div className="login-card">
           <h2 className="login-title">Welcome Back !</h2>
           {errorMessage && <p style={{ color: 'red', fontSize: '14px', marginBottom: '10px' }}>{errorMessage}</p>}
