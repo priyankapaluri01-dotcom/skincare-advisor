@@ -24,7 +24,7 @@ const BookCall = () => {
     <div className="page-wrapper">
       <div className="container">
         
-        {/* Left Side: Content */}
+       
         <section className="content-side">
           <h1 className="main-title">Leading chain of skin and makeup advisors in India</h1>
           <p className="description">
@@ -67,7 +67,7 @@ const BookCall = () => {
                 required 
               />
               
-              {/* Cleaned Phone Input */}
+              
               <input 
                 type="tel" 
                 name="mobile" 
