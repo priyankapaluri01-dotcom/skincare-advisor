@@ -4,7 +4,7 @@ import { setStep, saveAnswer, setFinalType, resetQuiz } from '../utils/skinSlice
 import './skin.css';
 
 const SkinQuiz = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
   
   
   const skinState = useSelector((state) => state.skin) || {};

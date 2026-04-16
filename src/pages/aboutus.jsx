@@ -21,8 +21,8 @@ const AboutUs = () => {
       content: "I choosed VITE as the bulid tool mainly because of its HMR Feature as it captures the changes super fast.Javascript (E26+) features and Git for professional based version control (proabaly for tracking changes)"
     },
     {
-      title: "Core React Architecture (Hooks & Routing)",
-      content: "As a base i used the popular Javascript libary React and in this project i just understand how react this whole works , understood the JSX , and also implemted Basic Hooks (usestate for statemangement,useeffect for sideeffect and understood it lifecycle methods,By React Router i just handled this navigation between views , Event listensers to handle interactions easily  "
+      title: "Core React Architecture (Hooks & Routing and Redux Toolkit )",
+      content: "As a base i used the popular Javascript libary React and in this project i just understand how react this whole works , understood the JSX , and also implemted Basic Hooks (usestate for statemangement,useeffect for sideeffect and understood it lifecycle methods,By React Router i just handled this navigation between views , Event listensers to handle interactions easily. And also i used Redux Toolkit for state management, which helped me to manage the global state more effectively and also understand how to manage global state and local State"
     },
     {
       title: "Backend & Database (Firebase)",

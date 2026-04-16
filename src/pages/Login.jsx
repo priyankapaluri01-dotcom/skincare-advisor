@@ -13,7 +13,7 @@ function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(''); 
-  
+
   const navigate = useNavigate();
   const dispatch = useDispatch(); 
 
@@ -49,7 +49,6 @@ function LoginForm() {
 
   return (
     <div className="login-wrap">
-       {/* ... (rest of your JSX remains the same) */}
        <div className="login-container-stack">
         <div className="login-card">
           <h2 className="login-title">Welcome Back !</h2>
