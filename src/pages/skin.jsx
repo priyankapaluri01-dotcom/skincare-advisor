@@ -122,7 +122,6 @@ const SkinQuiz = () => {
         </div>
       )}
 
-      {/* STEP 2 */}
       {currentStep === 2 && (
         <div className="quiz-section content-fade-in">
           <h1 className="quiz-title">How does your face look?</h1>
@@ -140,7 +139,6 @@ const SkinQuiz = () => {
         </div>
       )}
 
-      {/* STEP 3 - Added Safety Check for selectedMainType */}
       {currentStep === 3 && selectedMainType && (
         <div className="quiz-section content-fade-in">
           <h2 className="sub-heading">Examine and touch your skin.</h2>

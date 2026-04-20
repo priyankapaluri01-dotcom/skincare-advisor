@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
-  Menu, X, User, BookOpen, PenTool, 
-  MessageSquare, HeartHandshake, Calendar 
+  Menu, 
+  X, 
+  User, 
+  BookOpen, 
+  PenTool, 
+  ShoppingBag, 
+  MessageSquare, 
+  HeartHandshake, 
+  Calendar 
 } from 'lucide-react';
 import "./Navbar.css";
 import { useSelector } from 'react-redux';
@@ -56,6 +63,7 @@ const Navbar = () => {
           <li><Link to="/tips" onClick={toggleMenu}><PenTool size={18} /> Skincare Tips</Link></li>
           <li><Link to="/book-call" onClick={toggleMenu}><Calendar size={18} /> Book a call</Link></li>
           <li><Link to="/contactus" onClick={toggleMenu}><MessageSquare size={18} /> Contact Us</Link></li>
+          <li><Link to="/skincare" onClick={toggleMenu}><ShoppingBag size={18} /> Products</Link></li>
           <div className="nav-divider"></div>
           {isLoggedIn && (
             <li><Link to="/myaccount" onClick={toggleMenu}><User size={18} /> My Profile</Link></li>
