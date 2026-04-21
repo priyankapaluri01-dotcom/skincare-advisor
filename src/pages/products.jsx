@@ -1,33 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './products.css'
+import './products.css';
 
 const Products = () => {
+
   const [products, setProducts] = useState([]);
-  
 
   useEffect(() => {
     const getdata = async () => {
       try {
-        const response1 = await axios.get('https://dummyjson.com/products/category/beauty');
-
-        setProducts(response1.data.products);
+        const response = await axios.get('https://69e5c59cce4e908a155e6301.mockapi.io/apivi/products');
+        setProducts(response.data);
       } catch (error) {
-        console.error('Error:', error);
+        console.error('Error fetching data:', error);
       }
     };
     getdata();
   }, []);
-
   return (
     <div className="productscontainer">
-      <h1 style={{ textAlign: 'center', marginBottom: '30px' }}> Products</h1>
-
+      <h2 className="category-heading">Products Collection</h2>
       <div className="productgrid">
-        {products.map((item) => (
+       
+        {products?.map((item) => (
           <div key={item.id} className="productcard">
+            
             <img 
-              src={item.thumbnail} 
+              src={item.image} 
               alt={item.title} 
               className="productimage" 
             />

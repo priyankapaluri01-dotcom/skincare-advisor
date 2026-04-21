@@ -5,15 +5,17 @@
   margin: 0 auto;
 }
 .productgrid {
-  display: flex;
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
   gap: 24px;
-  padding-bottom: 20px;      
-  scrollbar-width: thin;     
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .productcard {
-  min-width: 280px;          
-  flex-shrink: 0;            
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
 }
 
 .productcard:hover {
