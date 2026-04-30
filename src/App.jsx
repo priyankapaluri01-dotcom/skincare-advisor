@@ -12,6 +12,7 @@ import SkincareTips from "./pages/skincaretips.jsx";
 import Bookacall from "./pages/bookacall.jsx";
 import Skin from './pages/skin.jsx'; 
 import Products from './pages/products.jsx';
+import ProtectedRoute from './components/ProtectedRoute.jsx';
 
 const App = () => {
   const [Usercame, setUsercame] = useState(false);
@@ -31,7 +32,11 @@ const App = () => {
         <Route path="/Myaccount" element={<Myaccount/>}/>
         <Route path="/tips" element={<SkincareTips />} />
         <Route path="/skin" element={<Skin />} />
-        <Route path="/skincare" element={<Products />} />
+        <Route path="/skincare" element={
+          <ProtectedRoute>
+            <Products />
+          </ProtectedRoute>
+        } />
       </Routes>
     </div>
   );

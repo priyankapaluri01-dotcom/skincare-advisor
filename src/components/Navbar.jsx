@@ -18,7 +18,8 @@ const Navbar = () => {
   const [userclicked, setuserclicked] = useState(false);
   const navigate = useNavigate();
   
-  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  // use the authentication flag from the store
+  const isLoggedIn = useSelector((state) => state.user.isAuthenticated);
 
   const toggleMenu = () => setuserclicked(!userclicked);
 
@@ -63,7 +64,9 @@ const Navbar = () => {
           <li><Link to="/tips" onClick={toggleMenu}><PenTool size={18} /> Skincare Tips</Link></li>
           <li><Link to="/book-call" onClick={toggleMenu}><Calendar size={18} /> Book a call</Link></li>
           <li><Link to="/contactus" onClick={toggleMenu}><MessageSquare size={18} /> Contact Us</Link></li>
-          <li><Link to="/skincare" onClick={toggleMenu}><ShoppingBag size={18} /> Products</Link></li>
+          {isLoggedIn && (
+            <li><Link to="/skincare" onClick={toggleMenu}><ShoppingBag size={18} /> Products</Link></li>
+          )}
           <div className="nav-divider"></div>
           {isLoggedIn && (
             <li><Link to="/myaccount" onClick={toggleMenu}><User size={18} /> My Profile</Link></li>
